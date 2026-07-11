@@ -1,4 +1,3 @@
-import Image from "next/image";
 import DarkZone from "@/components/DarkZone";
 import ProductsShowcase from "@/components/ProductsShowcase";
 import TranslucentMark from "@/components/TranslucentMark";
@@ -12,36 +11,16 @@ export const metadata = {
 
 export default function ProductosPage() {
   return (
-    <>
-      <section className="relative flex min-h-[40vh] items-end overflow-hidden">
-        <Image
-          src={IMAGES.canopyMoody.src}
-          alt={IMAGES.canopyMoody.alt}
-          fill
-          priority
-          sizes="100vw"
-          className="photo-tone object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/60 to-forest/10" />
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 60% at 30% 100%, rgba(30,42,17,0.55), transparent 70%)",
-          }}
-        />
-        <TranslucentMark size="24rem" />
-        <div className="relative mx-auto w-full max-w-6xl px-6 pb-16">
-          <h1 className="font-display text-5xl text-papaya sm:text-6xl">Productos</h1>
-        </div>
+    <DarkZone images={[IMAGES.budMacroAmbient]}>
+      <TranslucentMark />
+
+      <section className="relative mx-auto w-full max-w-6xl px-6 pt-12">
+        <h1 className="font-display text-5xl text-papaya sm:text-6xl">Productos</h1>
       </section>
 
-      <DarkZone image={IMAGES.budMacroAmbient}>
-        <div className="relative mx-auto max-w-6xl px-6 pt-20">
-          <ProductsShowcase products={products} />
-        </div>
-      </DarkZone>
-    </>
+      <section className="relative mx-auto max-w-6xl px-6 pt-10 pb-20">
+        <ProductsShowcase products={products} />
+      </section>
+    </DarkZone>
   );
 }

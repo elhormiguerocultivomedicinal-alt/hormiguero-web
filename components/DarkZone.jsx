@@ -1,23 +1,17 @@
-import AmbientPhoto from "./AmbientPhoto";
-import AntPattern from "./AntPattern";
+import PhotoZone from "./PhotoZone";
 import Footer from "./Footer";
 
 /**
- * Wraps a page's last dark-surface content together with the Footer
- * under ONE continuous backdrop (one photo or one tiled pattern), so
- * the footer never reads as a separate, hard-cut block. Pass either
- * `image` (ambient blurred photo) or `pattern` (tiled isologo), not
- * both — one deliberate device per zone.
+ * Wraps a page's dark-surface content (from hero down) together with
+ * the Footer under ONE continuous photographic backdrop — one photo,
+ * or two crossfaded via PhotoZone — so the footer never reads as a
+ * separate, hard-cut block.
  */
-export default function DarkZone({ children, image, pattern = false }) {
+export default function DarkZone({ children, images, crossfadeAt }) {
   return (
-    <div className="relative overflow-hidden bg-forest">
-      {image && <AmbientPhoto image={image} />}
-      {pattern && <AntPattern />}
-      <div className="relative">
-        {children}
-        <Footer />
-      </div>
-    </div>
+    <PhotoZone images={images} crossfadeAt={crossfadeAt}>
+      {children}
+      <Footer />
+    </PhotoZone>
   );
 }

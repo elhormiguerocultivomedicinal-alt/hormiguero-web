@@ -1,5 +1,6 @@
 import Image from "next/image";
 import DarkZone from "./DarkZone";
+import TranslucentMark from "./TranslucentMark";
 import { IMAGES } from "@/lib/images";
 
 const SPECS = [
@@ -16,8 +17,9 @@ export default function ProductDetail({ product }) {
   const image = IMAGES[product.image];
 
   return (
-    <DarkZone image={IMAGES.canopyDarkTexture}>
-      <article className="relative mx-auto max-w-4xl px-6 pt-16 grid gap-10 md:grid-cols-2 md:items-start">
+    <DarkZone images={[IMAGES.canopyDarkTexture]}>
+      <TranslucentMark />
+      <article className="relative mx-auto max-w-4xl px-6 pt-12 grid gap-10 md:grid-cols-2 md:items-start">
         <div className="relative aspect-square overflow-hidden rounded-2xl p-1.5 ring-1 ring-papaya/10">
           <div className="relative h-full w-full overflow-hidden rounded-xl">
             <div className="pointer-events-none absolute inset-0 z-10 shadow-[inset_0_1px_0_rgba(255,240,217,0.08)]" />
@@ -42,7 +44,7 @@ export default function ProductDetail({ product }) {
           )}
 
           <dl className="mt-8 divide-y divide-army/40 border-t border-army/40">
-            {SPECS.map(({ label, key }) => (
+            {SPECS.filter(({ key }) => product[key]).map(({ label, key }) => (
               <div key={key} className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-6">
                 <dt className="w-48 shrink-0 font-heading text-xs uppercase tracking-wide text-olive">
                   {label}

@@ -29,9 +29,11 @@ export default function ProductCard({ product }) {
           {product.dominance}
         </p>
         <h3 className="mt-1 font-display text-2xl text-papaya">{product.name}</h3>
-        <p className="mt-2 text-sm text-papaya/70 font-body line-clamp-2">
-          {product.flavor}
-        </p>
+        {product.flavor && (
+          <p className="mt-2 text-sm text-papaya/70 font-body line-clamp-2">
+            {product.flavor}
+          </p>
+        )}
       </div>
     </Link>
   );

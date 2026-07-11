@@ -1,26 +1,23 @@
 import { IMAGES } from "@/lib/images";
 
 /**
- * The isologo, tinted translucent, as a single recurring brand signature —
- * same corner/opacity everywhere it appears (hero sections, Contacto).
- * `size` defaults to 42rem for full-height heroes; pass a smaller value
- * on shorter sections (e.g. Productos' 40vh hero) so the mark stays a
- * corner accent instead of arcing across the title — same rule (scale
- * to the section), not a one-off arbitrary size.
+ * The isologo icon (no text), tinted translucent, as a small corner
+ * signature — never `logoBadge` (icon + arced wordmark), which reads
+ * as ghost text when stretched large and faint over a heading.
  */
-export default function TranslucentMark({ className = "", size = "42rem" }) {
+export default function TranslucentMark({ className = "", size = "6rem" }) {
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute inset-0 opacity-[0.08] ${className}`}
+      className={`pointer-events-none absolute inset-0 opacity-[0.09] ${className}`}
       style={{
         backgroundColor: "var(--color-papaya)",
-        WebkitMaskImage: `url(${IMAGES.logoBadge.src})`,
-        maskImage: `url(${IMAGES.logoBadge.src})`,
+        WebkitMaskImage: `url(${IMAGES.logoIcon.src})`,
+        maskImage: `url(${IMAGES.logoIcon.src})`,
         WebkitMaskRepeat: "no-repeat",
         maskRepeat: "no-repeat",
-        WebkitMaskPosition: "bottom -8% right -8%",
-        maskPosition: "bottom -8% right -8%",
+        WebkitMaskPosition: "top 1.5rem right 1.5rem",
+        maskPosition: "top 1.5rem right 1.5rem",
         WebkitMaskSize: size,
         maskSize: size,
       }}
