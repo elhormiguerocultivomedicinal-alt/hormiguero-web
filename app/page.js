@@ -1,65 +1,118 @@
 import Image from "next/image";
+import Link from "next/link";
+import AmbientPhoto from "@/components/AmbientPhoto";
+import ArrowIcon from "@/components/ArrowIcon";
+import ProductsShowcase from "@/components/ProductsShowcase";
+import SectionDivider from "@/components/SectionDivider";
+import TextureOverlay from "@/components/TextureOverlay";
+import TranslucentMark from "@/components/TranslucentMark";
+import { IMAGES } from "@/lib/images";
+import { products } from "@/lib/products";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <>
+      <section className="relative flex min-h-[85vh] items-end overflow-hidden">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src={IMAGES.canopyBright.src}
+          alt={IMAGES.canopyBright.alt}
+          fill
           priority
+          sizes="100vw"
+          className="photo-tone object-cover"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
+        <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/70 to-forest/20" />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 60% at 30% 100%, rgba(30,42,17,0.55), transparent 70%)",
+          }}
+        />
+        <TranslucentMark />
+
+        <div className="relative mx-auto w-full max-w-6xl px-6 pb-20">
+          <h1 className="font-display text-5xl leading-tight text-papaya sm:text-6xl md:text-7xl">
+            El Hormiguero
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-papaya/85 font-body">
+            Cultivo de cannabis medicinal en Argentina. Inspirados en lo vivo
+            y lo cercano — una energía libre, relajada y consciente.
           </p>
+          <div className="mt-8 flex flex-wrap items-center gap-5 font-heading text-sm uppercase tracking-wide">
+            <Link
+              href="/productos"
+              className="group inline-flex items-center gap-3 rounded-full bg-olive py-1 pl-6 pr-1 text-forest transition-opacity hover:opacity-90"
+            >
+              Ver productos
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-forest text-olive transition-transform group-hover:translate-x-0.5">
+                <ArrowIcon className="h-4 w-4" />
+              </span>
+            </Link>
+            <Link
+              href="/nosotros"
+              className="rounded-full border border-papaya/50 px-6 py-3 text-papaya transition-colors hover:border-olive hover:text-olive"
+            >
+              Conocenos
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <SectionDivider />
+
+      <section className="relative overflow-hidden bg-papaya text-forest">
+        <TextureOverlay />
+        <div className="relative mx-auto max-w-6xl px-6 py-20 grid gap-12 md:grid-cols-2 md:items-center">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl p-1.5 ring-1 ring-forest/10">
+            <div className="relative h-full w-full overflow-hidden rounded-xl">
+              <Image
+                src={IMAGES.cultivationTrim.src}
+                alt={IMAGES.cultivationTrim.alt}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="photo-tone object-cover"
+              />
+            </div>
+          </div>
+
+          <div>
+            <p className="font-heading text-xs uppercase tracking-wide text-army">
+              Nuestra inspiración
+            </p>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl">
+              Lo simple, lo real y lo natural
+            </h2>
+            <p className="mt-6 max-w-[60ch] leading-relaxed text-forest/80 font-body">
+              La marca encuentra su inspiración en lo vivo y lo cercano. Su
+              identidad se nutre de texturas naturales, verdes profundos y
+              patrones orgánicos que evocan conexión y frescura — una
+              estética cálida y auténtica, tomada del ritmo y la armonía de
+              la naturaleza.
+            </p>
+            <Link
+              href="/nosotros"
+              className="mt-6 inline-block font-heading text-sm uppercase tracking-wide text-army underline decoration-olive underline-offset-4 hover:text-forest"
+            >
+              Conocé más sobre nosotros
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-forest">
+        <AmbientPhoto image={IMAGES.canopyDarkTexture} />
+        <div className="relative mx-auto max-w-6xl px-6 py-20">
+          <h2 className="font-display text-3xl text-papaya sm:text-4xl">
+            Nuestros productos
+          </h2>
+
+          <div className="mt-10">
+            <ProductsShowcase products={products} />
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
