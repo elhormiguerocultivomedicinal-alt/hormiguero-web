@@ -1,4 +1,4 @@
-import AmbientPhoto from "@/components/AmbientPhoto";
+import DarkZone from "@/components/DarkZone";
 import { CONTACT } from "@/lib/site-config";
 import { IMAGES } from "@/lib/images";
 
@@ -15,10 +15,8 @@ const LINKS = [
 
 export default function ContactoPage() {
   return (
-    <section className="relative overflow-hidden">
-      <AmbientPhoto image={IMAGES.leafPortrait} />
-
-      <div className="relative mx-auto max-w-2xl px-6 py-24">
+    <DarkZone image={IMAGES.leafPortrait}>
+      <div className="relative mx-auto max-w-2xl px-6 pt-20">
         <h1 className="font-display text-5xl text-papaya">Contacto</h1>
         <p className="mt-6 max-w-[55ch] leading-relaxed text-papaya/80 font-body">
           ¿Sos paciente REPROCANN y tenés dudas sobre nuestras genéticas?
@@ -43,6 +41,6 @@ export default function ContactoPage() {
           ))}
         </ul>
       </div>
-    </section>
+    </DarkZone>
   );
 }

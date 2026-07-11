@@ -1,6 +1,5 @@
 import { display, heading, body } from "./fonts";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import GrainOverlay from "@/components/GrainOverlay";
 import "./globals.css";
 
@@ -19,8 +18,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <GrainOverlay />
         <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <main className="flex-1 flex flex-col">{children}</main>
       </body>
     </html>
   );

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import AmbientPhoto from "@/components/AmbientPhoto";
 import ArrowIcon from "@/components/ArrowIcon";
+import DarkZone from "@/components/DarkZone";
 import ProductsShowcase from "@/components/ProductsShowcase";
-import SectionDivider from "@/components/SectionDivider";
+import SurfaceBlend from "@/components/SurfaceBlend";
 import TextureOverlay from "@/components/TextureOverlay";
 import TranslucentMark from "@/components/TranslucentMark";
 import { IMAGES } from "@/lib/images";
@@ -60,7 +60,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <SectionDivider />
+      <SurfaceBlend variant="forest-to-papaya" />
 
       <section className="relative overflow-hidden bg-papaya text-forest">
         <TextureOverlay />
@@ -101,9 +101,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-forest">
-        <AmbientPhoto image={IMAGES.canopyDarkTexture} />
-        <div className="relative mx-auto max-w-6xl px-6 py-20">
+      <SurfaceBlend variant="papaya-to-forest" />
+
+      <DarkZone image={IMAGES.canopyDarkTexture}>
+        <div className="relative mx-auto max-w-6xl px-6 pt-20">
           <h2 className="font-display text-3xl text-papaya sm:text-4xl">
             Nuestros productos
           </h2>
@@ -112,7 +113,7 @@ export default function HomePage() {
             <ProductsShowcase products={products} />
           </div>
         </div>
-      </section>
+      </DarkZone>
     </>
   );
 }

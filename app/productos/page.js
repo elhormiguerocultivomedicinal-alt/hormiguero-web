@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AmbientPhoto from "@/components/AmbientPhoto";
+import DarkZone from "@/components/DarkZone";
 import ProductsShowcase from "@/components/ProductsShowcase";
 import TranslucentMark from "@/components/TranslucentMark";
 import { IMAGES } from "@/lib/images";
@@ -23,18 +23,25 @@ export default function ProductosPage() {
           className="photo-tone object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/60 to-forest/10" />
-        <TranslucentMark />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 60% at 30% 100%, rgba(30,42,17,0.55), transparent 70%)",
+          }}
+        />
+        <TranslucentMark size="24rem" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-16">
           <h1 className="font-display text-5xl text-papaya sm:text-6xl">Productos</h1>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-forest">
-        <AmbientPhoto image={IMAGES.budMacroAmbient} />
-        <div className="relative mx-auto max-w-6xl px-6 py-20">
+      <DarkZone image={IMAGES.budMacroAmbient}>
+        <div className="relative mx-auto max-w-6xl px-6 pt-20">
           <ProductsShowcase products={products} />
         </div>
-      </section>
+      </DarkZone>
     </>
   );
 }

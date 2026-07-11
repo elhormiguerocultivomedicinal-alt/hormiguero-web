@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AmbientPhoto from "./AmbientPhoto";
+import DarkZone from "./DarkZone";
 import { IMAGES } from "@/lib/images";
 
 const SPECS = [
@@ -16,9 +16,8 @@ export default function ProductDetail({ product }) {
   const image = IMAGES[product.image];
 
   return (
-    <article className="relative overflow-hidden">
-      <AmbientPhoto image={IMAGES.canopyDarkTexture} />
-      <div className="relative mx-auto max-w-4xl px-6 py-16 grid gap-10 md:grid-cols-2 md:items-start">
+    <DarkZone image={IMAGES.canopyDarkTexture}>
+      <article className="relative mx-auto max-w-4xl px-6 pt-16 grid gap-10 md:grid-cols-2 md:items-start">
         <div className="relative aspect-square overflow-hidden rounded-2xl p-1.5 ring-1 ring-papaya/10">
           <div className="relative h-full w-full overflow-hidden rounded-xl">
             <div className="pointer-events-none absolute inset-0 z-10 shadow-[inset_0_1px_0_rgba(255,240,217,0.08)]" />
@@ -53,7 +52,7 @@ export default function ProductDetail({ product }) {
             ))}
           </dl>
         </div>
-      </div>
-    </article>
+      </article>
+    </DarkZone>
   );
 }

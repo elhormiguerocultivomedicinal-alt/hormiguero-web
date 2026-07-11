@@ -1,6 +1,7 @@
 import Image from "next/image";
-import AntPattern from "@/components/AntPattern";
+import DarkZone from "@/components/DarkZone";
 import Reveal from "@/components/Reveal";
+import SurfaceBlend from "@/components/SurfaceBlend";
 import TextureOverlay from "@/components/TextureOverlay";
 import TranslucentMark from "@/components/TranslucentMark";
 import { IMAGES } from "@/lib/images";
@@ -39,11 +40,21 @@ export default function NosotrosPage() {
           className="photo-tone object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/60 to-forest/10" />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 60% at 30% 100%, rgba(30,42,17,0.55), transparent 70%)",
+          }}
+        />
         <TranslucentMark />
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-16">
           <h1 className="font-display text-5xl text-papaya sm:text-6xl">Nosotros</h1>
         </div>
       </section>
+
+      <SurfaceBlend variant="forest-to-papaya" />
 
       <section className="relative overflow-hidden bg-papaya text-forest">
         <TextureOverlay />
@@ -77,9 +88,10 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-forest">
-        <AntPattern />
-        <div className="relative mx-auto max-w-3xl px-6 py-20">
+      <SurfaceBlend variant="papaya-to-forest" />
+
+      <DarkZone pattern>
+        <div className="relative mx-auto max-w-3xl px-6 pt-20">
           <h2 className="font-display text-3xl text-papaya sm:text-4xl">
             ¿Qué es REPROCANN?
           </h2>
@@ -97,7 +109,7 @@ export default function NosotrosPage() {
             Nación.
           </p>
         </div>
-      </section>
+      </DarkZone>
     </>
   );
 }

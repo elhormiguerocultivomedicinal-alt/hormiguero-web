@@ -2,12 +2,13 @@ import { IMAGES } from "@/lib/images";
 
 /**
  * The isologo, tinted translucent, as a single recurring brand signature —
- * same position/size/opacity everywhere it appears (hero sections,
- * Contacto). One consistent placement reads as a deliberate system;
- * a different size/corner on every page reads as random decoration.
- * Do not override the defaults per-page.
+ * same corner/opacity everywhere it appears (hero sections, Contacto).
+ * `size` defaults to 42rem for full-height heroes; pass a smaller value
+ * on shorter sections (e.g. Productos' 40vh hero) so the mark stays a
+ * corner accent instead of arcing across the title — same rule (scale
+ * to the section), not a one-off arbitrary size.
  */
-export default function TranslucentMark({ className = "" }) {
+export default function TranslucentMark({ className = "", size = "42rem" }) {
   return (
     <div
       aria-hidden
@@ -20,8 +21,8 @@ export default function TranslucentMark({ className = "" }) {
         maskRepeat: "no-repeat",
         WebkitMaskPosition: "bottom -8% right -8%",
         maskPosition: "bottom -8% right -8%",
-        WebkitMaskSize: "42rem",
-        maskSize: "42rem",
+        WebkitMaskSize: size,
+        maskSize: size,
       }}
     />
   );
