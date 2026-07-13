@@ -24,7 +24,17 @@ function PhotoLayer({ image, mask, priority }) {
         alt=""
         fill
         priority={priority}
-        sizes="100vw"
+        // This box is height-constrained (object-cover fits it to the
+        // WHOLE page's height, not one viewport), so a `sizes="100vw"`
+        // hint — which only reasons about viewport width — makes
+        // next/image pick a source far too small on narrow/tall mobile
+        // pages: it requested a 1200px-wide image to cover a box needing
+        // ~13000 device px of height, an 8x upscale that showed up as
+        // visibly blocky on a real phone. Pin sizes to the largest
+        // generated bucket instead; a lower quality offsets the bigger
+        // download since blur-2xl hides compression artifacts anyway.
+        sizes="3840px"
+        quality={40}
         className="photo-tone scale-110 object-cover blur-2xl"
       />
     </div>
