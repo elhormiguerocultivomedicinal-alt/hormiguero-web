@@ -35,7 +35,7 @@ function PhotoLayer({ image, mask, priority }) {
         // download since blur-2xl hides compression artifacts anyway.
         sizes="3840px"
         quality={40}
-        className="photo-tone scale-110 object-cover blur-2xl"
+        className="photo-tone-blur scale-110 object-cover"
       />
     </div>
   );

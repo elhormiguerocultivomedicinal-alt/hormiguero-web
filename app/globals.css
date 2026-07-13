@@ -62,6 +62,16 @@ a:active {
   filter: saturate(0.88) sepia(0.06);
 }
 
+/* `filter` is a single property, so stacking `photo-tone` with a
+   Tailwind blur-* utility class doesn't merge them — one wins outright
+   (here, unlayered `photo-tone` always beats the utility, since
+   Tailwind v4's utilities live inside a cascade layer and unlayered
+   rules take priority regardless of source order), silently dropping
+   the blur. Ambient PhotoZone backgrounds need both in one declaration. */
+.photo-tone-blur {
+  filter: saturate(0.88) sepia(0.06) blur(40px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
