@@ -29,17 +29,15 @@ export default function NosotrosPage() {
     <DarkZone image={IMAGES.greenhouseRows}>
       <TranslucentMark />
 
-      <section className="relative mx-auto w-full max-w-6xl px-6 pt-12">
-        <h1 className="glass-panel inline-block rounded-2xl px-6 py-3 font-display text-3xl text-papaya ring-1 ring-papaya/10 sm:text-4xl">
+      <section className="relative mx-auto w-full max-w-6xl px-6 pt-16 sm:pt-20">
+        <h1 className="text-shadow-strong font-display text-4xl text-papaya sm:text-5xl">
           Nosotros
         </h1>
       </section>
 
       <section className="relative mx-auto max-w-3xl px-6 py-20">
-        <div className="glass-panel rounded-3xl px-8 py-10 ring-1 ring-papaya/10">
-          <p className="font-heading text-xs uppercase tracking-wide text-olive">
-            Inspiración
-          </p>
+        <div className="glass-panel rounded-2xl px-8 py-10 ring-1 ring-papaya/10">
+          <p className="tag-stamp">Inspiración</p>
           <h2 className="mt-3 font-display text-3xl text-papaya sm:text-4xl">
             Lo vivo y lo cercano
           </h2>
@@ -69,7 +67,7 @@ export default function NosotrosPage() {
       </section>
 
       <section className="relative mx-auto max-w-3xl px-6 pt-4 pb-20">
-        <div className="glass-panel rounded-3xl px-8 py-10 ring-1 ring-papaya/10">
+        <div className="glass-panel rounded-2xl px-8 py-10 ring-1 ring-papaya/10">
           <h2 className="font-display text-3xl text-papaya sm:text-4xl">
             ¿Qué es REPROCANN?
           </h2>

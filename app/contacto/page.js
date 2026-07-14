@@ -18,11 +18,13 @@ export default function ContactoPage() {
   return (
     <DarkZone image={IMAGES.leafPortrait}>
       <TranslucentMark />
-      <div className="relative mx-auto max-w-2xl px-6 pt-12">
-        <div className="glass-panel rounded-3xl px-8 py-10 ring-1 ring-papaya/10">
-          <h1 className="font-display text-3xl text-papaya sm:text-4xl">Contacto</h1>
+      <div className="relative mx-auto max-w-2xl px-6 pt-16 sm:pt-20">
+        <h1 className="text-shadow-strong font-display text-4xl text-papaya sm:text-5xl">
+          Contacto
+        </h1>
 
-          <p className="mt-6 max-w-[55ch] leading-relaxed text-papaya/80 font-body">
+        <div className="glass-panel mt-8 rounded-2xl px-8 py-10 ring-1 ring-papaya/10">
+          <p className="max-w-[55ch] leading-relaxed text-papaya/80 font-body">
             ¿Sos paciente REPROCANN y tenés dudas sobre nuestras genéticas?
             Escribinos por cualquiera de estos medios.
           </p>
@@ -36,9 +38,7 @@ export default function ContactoPage() {
                   rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="flex items-baseline gap-3 border-b border-army/40 py-3 transition-colors hover:border-olive"
                 >
-                  <span className="font-heading text-xs uppercase tracking-wide text-olive">
-                    {link.label}
-                  </span>
+                  <span className="tag-stamp">{link.label}</span>
                   <span className="text-papaya/90 font-body">{link.value}</span>
                 </a>
               </li>

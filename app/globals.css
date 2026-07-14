@@ -66,11 +66,39 @@ a:active {
    backdrop. The old page-position darkening gradient assumed the photo
    scrolled with the page; now the photo is fixed to the viewport, so
    contrast can't be tuned by scroll position — each text block gets
-   its own frosted panel instead. */
+   its own panel instead. Tuned toward an opaque "kraft card" (low blur,
+   higher fill) rather than a frosted-glass look — the glass treatment
+   read as a generic dark-hero-card template when it was the only
+   surface style on every block of text sitewide. */
 .glass-panel {
-  background: rgba(30, 42, 17, 0.55);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(30, 42, 17, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Hand-stamped label motif for short tags (dominance, eyebrows, the
+   THC/REPROCANN notice) — echoes the brand's own painted cultivo sign
+   and kraft-paper jar labels, standing in for the generic
+   color+tracking-only caption used everywhere before. */
+.tag-stamp {
+  display: inline-flex;
+  width: fit-content;
+  border: 1px solid var(--color-olive);
+  border-radius: 0.3rem;
+  padding: 0.25rem 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-olive);
+}
+
+/* Legibility guard for hero titles/copy that sit directly on the photo
+   (no panel behind them) — an editorial title treatment instead of a
+   card, backed by a soft shadow rather than a solid fill. */
+.text-shadow-strong {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.45);
 }
 
 @media (prefers-reduced-motion: reduce) {

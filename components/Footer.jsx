@@ -13,7 +13,7 @@ export default function Footer() {
 
   return (
     <footer className="relative mx-auto max-w-6xl px-6 pt-16 pb-12">
-      <div className="glass-panel flex flex-col gap-6 rounded-3xl px-8 py-10 ring-1 ring-papaya/10">
+      <div className="glass-panel flex flex-col gap-6 rounded-2xl px-8 py-10 ring-1 ring-papaya/10">
         <BrandMark className="h-7 aspect-[4000/625]" />
 
         <p className="max-w-2xl text-sm leading-relaxed text-papaya/70 font-body">

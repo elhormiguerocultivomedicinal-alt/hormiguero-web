@@ -34,13 +34,13 @@ export default function ProductDetail({ product }) {
           </div>
         </div>
 
-        <div className="glass-panel rounded-3xl px-8 py-8 ring-1 ring-papaya/10">
-          <h1 className="font-display text-4xl text-papaya">{product.name}</h1>
+        <div className="glass-panel rounded-2xl px-8 py-8 ring-1 ring-papaya/10">
+          <h1 className="font-display text-4xl uppercase tracking-tight text-papaya">
+            {product.name}
+          </h1>
 
           {product.containsThc && (
-            <p className="mt-2 font-heading text-xs uppercase tracking-wide text-olive">
-              Contiene THC · Exclusivo pacientes con REPROCANN
-            </p>
+            <p className="tag-stamp mt-3">Contiene THC · Exclusivo pacientes con REPROCANN</p>
           )}
 
           <dl className="mt-8 divide-y divide-papaya/15 border-t border-papaya/15">
