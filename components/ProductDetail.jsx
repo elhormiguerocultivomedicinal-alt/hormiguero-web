@@ -17,7 +17,7 @@ export default function ProductDetail({ product }) {
   const image = IMAGES[product.image];
 
   return (
-    <DarkZone images={[IMAGES.canopyDarkTexture]}>
+    <DarkZone image={IMAGES.canopyDarkTexture}>
       <TranslucentMark />
       <article className="relative mx-auto max-w-4xl px-6 pt-12 grid gap-10 md:grid-cols-2 md:items-start">
         <div className="relative aspect-square overflow-hidden rounded-2xl p-1.5 ring-1 ring-papaya/10">
@@ -34,7 +34,7 @@ export default function ProductDetail({ product }) {
           </div>
         </div>
 
-        <div>
+        <div className="glass-panel rounded-3xl px-8 py-8 ring-1 ring-papaya/10">
           <h1 className="font-display text-4xl text-papaya">{product.name}</h1>
 
           {product.containsThc && (
@@ -43,7 +43,7 @@ export default function ProductDetail({ product }) {
             </p>
           )}
 
-          <dl className="mt-8 divide-y divide-army/40 border-t border-army/40">
+          <dl className="mt-8 divide-y divide-papaya/15 border-t border-papaya/15">
             {SPECS.filter(({ key }) => product[key]).map(({ label, key }) => (
               <div key={key} className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-6">
                 <dt className="w-48 shrink-0 font-heading text-xs uppercase tracking-wide text-olive">

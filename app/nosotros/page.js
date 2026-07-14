@@ -26,7 +26,7 @@ const PILLARS = [
 
 export default function NosotrosPage() {
   return (
-    <DarkZone images={[IMAGES.greenhouseRows]}>
+    <DarkZone image={IMAGES.greenhouseRows}>
       <TranslucentMark />
 
       <section className="relative mx-auto w-full max-w-6xl px-6 pt-12">
@@ -34,51 +34,58 @@ export default function NosotrosPage() {
       </section>
 
       <section className="relative mx-auto max-w-3xl px-6 py-20">
-        <p className="font-heading text-xs uppercase tracking-wide text-olive">
-          Inspiración
-        </p>
-        <h2 className="mt-3 font-display text-3xl text-papaya sm:text-4xl">
-          Lo vivo y lo cercano
-        </h2>
-        <p className="mt-6 max-w-[65ch] leading-relaxed text-papaya/80 font-body">
-          La marca encuentra su inspiración en lo vivo y lo cercano. Su
-          identidad visual se nutre de texturas naturales, verdes profundos
-          y patrones orgánicos que evocan conexión y frescura. Respira una
-          energía libre, relajada y consciente, inspirada en lo simple, lo
-          real y lo natural.
-        </p>
+        <div className="glass-panel rounded-3xl px-8 py-10 ring-1 ring-papaya/10">
+          <p className="font-heading text-xs uppercase tracking-wide text-olive">
+            Inspiración
+          </p>
+          <h2 className="mt-3 font-display text-3xl text-papaya sm:text-4xl">
+            Lo vivo y lo cercano
+          </h2>
+          <p className="mt-6 max-w-[65ch] leading-relaxed text-papaya/80 font-body">
+            La marca encuentra su inspiración en lo vivo y lo cercano. Su
+            identidad visual se nutre de texturas naturales, verdes profundos
+            y patrones orgánicos que evocan conexión y frescura. Respira una
+            energía libre, relajada y consciente, inspirada en lo simple, lo
+            real y lo natural.
+          </p>
+        </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-3">
+        <div className="mt-8 grid gap-6 sm:grid-cols-3">
           {PILLARS.map((pillar, i) => (
             <Reveal key={pillar.title} delay={i * 0.08}>
-              <h3 className="font-heading text-sm uppercase tracking-wide text-olive">
-                {pillar.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-papaya/75 font-body">
-                {pillar.text}
-              </p>
+              <div className="glass-panel h-full rounded-2xl px-6 py-6 ring-1 ring-papaya/10">
+                <h3 className="font-heading text-sm uppercase tracking-wide text-olive">
+                  {pillar.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-papaya/75 font-body">
+                  {pillar.text}
+                </p>
+              </div>
             </Reveal>
           ))}
         </div>
       </section>
 
       <section className="relative mx-auto max-w-3xl px-6 pt-4 pb-20">
-        <h2 className="font-display text-3xl text-papaya sm:text-4xl">
-          ¿Qué es REPROCANN?
-        </h2>
-        <p className="mt-6 max-w-[65ch] leading-relaxed text-papaya/80 font-body">
-          REPROCANN es el Registro del Programa de Cannabis (Cultivo
-          Solidario) que habilita en Argentina, bajo la Ley 27.350, a
-          pacientes con indicación médica a acceder al cannabis con fines
-          terapéuticos o paliativos, ya sea mediante autocultivo o a través
-          de un/a cultivador/a solidario/a inscripto/a. El Hormiguero cultiva
-          exclusivamente para pacientes registrados en REPROCANN.
-        </p>
-        <p className="mt-4 max-w-[65ch] text-sm leading-relaxed text-papaya/60 font-body">
-          Para inscribirte o conocer el detalle del trámite, la fuente
-          oficial es el sitio de REPROCANN del Ministerio de Salud de la
-          Nación.
-        </p>
+        <div className="glass-panel rounded-3xl px-8 py-10 ring-1 ring-papaya/10">
+          <h2 className="font-display text-3xl text-papaya sm:text-4xl">
+            ¿Qué es REPROCANN?
+          </h2>
+          <p className="mt-6 max-w-[65ch] leading-relaxed text-papaya/80 font-body">
+            REPROCANN es el Registro del Programa de Cannabis (Cultivo
+            Solidario) que habilita en Argentina, bajo la Ley 27.350, a
+            pacientes con indicación médica a acceder al cannabis con fines
+            terapéuticos o paliativos, ya sea mediante autocultivo o a
+            través de un/a cultivador/a solidario/a inscripto/a. El
+            Hormiguero cultiva exclusivamente para pacientes registrados en
+            REPROCANN.
+          </p>
+          <p className="mt-4 max-w-[65ch] text-sm leading-relaxed text-papaya/60 font-body">
+            Para inscribirte o conocer el detalle del trámite, la fuente
+            oficial es el sitio de REPROCANN del Ministerio de Salud de la
+            Nación.
+          </p>
+        </div>
       </section>
     </DarkZone>
   );

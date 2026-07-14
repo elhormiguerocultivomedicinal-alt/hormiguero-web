@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function ProductosPage() {
   return (
-    <DarkZone images={[IMAGES.budMacroAmbient]}>
+    <DarkZone image={IMAGES.budMacroAmbient}>
       <TranslucentMark />
 
       <section className="relative mx-auto w-full max-w-6xl px-6 pt-12">

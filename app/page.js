@@ -9,33 +9,35 @@ import { products } from "@/lib/products";
 
 export default function HomePage() {
   return (
-    <DarkZone images={[IMAGES.canopyBright]}>
+    <DarkZone image={IMAGES.canopyBright}>
       <TranslucentMark />
 
       <section className="relative mx-auto w-full max-w-6xl px-6 pt-12">
-        <h1 className="font-display text-5xl leading-tight text-papaya sm:text-6xl md:text-7xl">
-          El Hormiguero
-        </h1>
-        <p className="mt-6 max-w-xl text-lg leading-relaxed text-papaya/85 font-body">
-          Cultivo de cannabis medicinal en Argentina. Inspirados en lo vivo
-          y lo cercano — una energía libre, relajada y consciente.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-5 font-heading text-sm uppercase tracking-wide">
-          <Link
-            href="/productos"
-            className="group inline-flex items-center gap-3 rounded-full bg-olive py-1 pl-6 pr-1 text-forest transition-opacity hover:opacity-90"
-          >
-            Ver productos
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-forest text-olive transition-transform group-hover:translate-x-0.5">
-              <ArrowIcon className="h-4 w-4" />
-            </span>
-          </Link>
-          <Link
-            href="/nosotros"
-            className="rounded-full border border-papaya/50 px-6 py-3 text-papaya transition-colors hover:border-olive hover:text-olive"
-          >
-            Conocenos
-          </Link>
+        <div className="glass-panel max-w-2xl rounded-3xl px-8 py-10 ring-1 ring-papaya/10 sm:px-12 sm:py-14">
+          <h1 className="font-display text-5xl leading-tight text-papaya sm:text-6xl md:text-7xl">
+            El Hormiguero
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-papaya/85 font-body">
+            Cultivo de cannabis medicinal en Argentina. Inspirados en lo vivo
+            y lo cercano — una energía libre, relajada y consciente.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-5 font-heading text-sm uppercase tracking-wide">
+            <Link
+              href="/productos"
+              className="group inline-flex items-center gap-3 rounded-full bg-olive py-1 pl-6 pr-1 text-forest transition-opacity hover:opacity-90"
+            >
+              Ver productos
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-forest text-olive transition-transform group-hover:translate-x-0.5">
+                <ArrowIcon className="h-4 w-4" />
+              </span>
+            </Link>
+            <Link
+              href="/nosotros"
+              className="rounded-full border border-papaya/50 px-6 py-3 text-papaya transition-colors hover:border-olive hover:text-olive"
+            >
+              Conocenos
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -52,7 +54,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div>
+        <div className="glass-panel rounded-3xl px-8 py-10 ring-1 ring-papaya/10">
           <p className="font-heading text-xs uppercase tracking-wide text-olive">
             Nuestra inspiración
           </p>
