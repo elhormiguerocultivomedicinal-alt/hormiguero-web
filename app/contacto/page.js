@@ -20,7 +20,7 @@ export default function ContactoPage() {
       <TranslucentMark />
       <div className="relative mx-auto max-w-2xl px-6 pt-12">
         <div className="glass-panel rounded-3xl px-8 py-10 ring-1 ring-papaya/10">
-          <h1 className="font-display text-5xl text-papaya">Contacto</h1>
+          <h1 className="font-display text-3xl text-papaya sm:text-4xl">Contacto</h1>
 
           <p className="mt-6 max-w-[55ch] leading-relaxed text-papaya/80 font-body">
             ¿Sos paciente REPROCANN y tenés dudas sobre nuestras genéticas?

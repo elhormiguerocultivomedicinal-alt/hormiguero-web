@@ -9,7 +9,7 @@ export default function ProductCard({ product }) {
   return (
     <Link
       href={`/productos/${product.slug}`}
-      className="group block overflow-hidden rounded-2xl border border-army/40 bg-army/10 transition-colors hover:border-olive/60"
+      className="glass-panel group block overflow-hidden rounded-2xl border border-papaya/10 transition-colors hover:border-olive/60"
     >
       <div className="relative aspect-[4/3] overflow-hidden p-1.5">
         <div className="relative h-full w-full overflow-hidden rounded-xl">

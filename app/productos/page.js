@@ -15,7 +15,7 @@ export default function ProductosPage() {
       <TranslucentMark />
 
       <section className="relative mx-auto w-full max-w-6xl px-6 pt-12">
-        <h1 className="glass-panel inline-block rounded-2xl px-6 py-3 font-display text-5xl text-papaya ring-1 ring-papaya/10 sm:text-6xl">
+        <h1 className="glass-panel inline-block rounded-2xl px-6 py-3 font-display text-3xl text-papaya ring-1 ring-papaya/10 sm:text-4xl">
           Productos
         </h1>
       </section>

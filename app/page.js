@@ -14,7 +14,7 @@ export default function HomePage() {
 
       <section className="relative mx-auto w-full max-w-6xl px-6 pt-12">
         <div className="glass-panel max-w-2xl rounded-3xl px-8 py-10 ring-1 ring-papaya/10 sm:px-12 sm:py-14">
-          <h1 className="font-display text-5xl leading-tight text-papaya sm:text-6xl md:text-7xl">
+          <h1 className="font-display text-3xl leading-tight text-papaya sm:text-4xl md:text-5xl">
             El Hormiguero
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-papaya/85 font-body">
@@ -78,7 +78,7 @@ export default function HomePage() {
       </section>
 
       <section className="relative mx-auto max-w-6xl px-6 pt-4 pb-20">
-        <h2 className="glass-panel inline-block rounded-2xl px-6 py-3 font-display text-3xl text-papaya ring-1 ring-papaya/10 sm:text-4xl">
+        <h2 className="glass-panel inline-block rounded-2xl px-6 py-3 font-display text-2xl text-papaya ring-1 ring-papaya/10 sm:text-3xl">
           Nuestros productos
         </h2>
         <div className="mt-10">
