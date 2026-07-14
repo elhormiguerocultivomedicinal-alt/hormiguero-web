@@ -19,10 +19,10 @@ export default function ContactoPage() {
     <DarkZone image={IMAGES.leafPortrait}>
       <TranslucentMark />
       <div className="relative mx-auto max-w-2xl px-6 pt-12">
-        <h1 className="font-display text-5xl text-papaya">Contacto</h1>
+        <div className="glass-panel rounded-3xl px-8 py-10 ring-1 ring-papaya/10">
+          <h1 className="font-display text-5xl text-papaya">Contacto</h1>
 
-        <div className="glass-panel mt-6 rounded-3xl px-8 py-10 ring-1 ring-papaya/10">
-          <p className="max-w-[55ch] leading-relaxed text-papaya/80 font-body">
+          <p className="mt-6 max-w-[55ch] leading-relaxed text-papaya/80 font-body">
             ¿Sos paciente REPROCANN y tenés dudas sobre nuestras genéticas?
             Escribinos por cualquiera de estos medios.
           </p>

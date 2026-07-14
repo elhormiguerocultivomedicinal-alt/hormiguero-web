@@ -24,11 +24,11 @@ export default function ProductCard({ product }) {
         </div>
       </div>
 
-      <div className="p-6">
-        <p className="font-heading text-xs uppercase tracking-wide text-olive">
+      <div className="p-4 sm:p-6">
+        <p className="font-heading text-[0.65rem] uppercase tracking-wide text-olive sm:text-xs">
           {product.dominance}
         </p>
-        <h3 className="mt-1 font-display text-2xl text-papaya">{product.name}</h3>
+        <h3 className="mt-1 font-display text-lg text-papaya sm:text-2xl">{product.name}</h3>
         {product.flavor && (
           <p className="mt-2 text-sm text-papaya/70 font-body line-clamp-2">
             {product.flavor}

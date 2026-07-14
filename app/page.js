@@ -78,7 +78,7 @@ export default function HomePage() {
       </section>
 
       <section className="relative mx-auto max-w-6xl px-6 pt-4 pb-20">
-        <h2 className="font-display text-3xl text-papaya sm:text-4xl">
+        <h2 className="glass-panel inline-block rounded-2xl px-6 py-3 font-display text-3xl text-papaya ring-1 ring-papaya/10 sm:text-4xl">
           Nuestros productos
         </h2>
         <div className="mt-10">
