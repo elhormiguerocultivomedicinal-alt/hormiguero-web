@@ -26,7 +26,7 @@ const PILLARS = [
 
 export default function NosotrosPage() {
   return (
-    <DarkZone images={[IMAGES.greenhouseRows, IMAGES.canopyDarkTexture]}>
+    <DarkZone images={[IMAGES.greenhouseRows]}>
       <TranslucentMark />
 
       <section className="relative mx-auto w-full max-w-6xl px-6 pt-12">

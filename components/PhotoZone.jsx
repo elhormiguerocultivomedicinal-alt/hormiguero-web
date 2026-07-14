@@ -31,11 +31,11 @@ function PhotoLayer({ image, mask, priority }) {
         // pages: it requested a 1200px-wide image to cover a box needing
         // ~13000 device px of height, an 8x upscale that showed up as
         // visibly blocky on a real phone. Pin sizes to the largest
-        // generated bucket instead; a lower quality offsets the bigger
-        // download since blur-2xl hides compression artifacts anyway.
+        // generated bucket instead, at full quality since the photo is
+        // meant to read as a sharp, recognizable backdrop (not blurred).
         sizes="3840px"
-        quality={40}
-        className="photo-tone-blur scale-110 object-cover"
+        quality={75}
+        className="photo-tone scale-110 object-cover"
       />
     </div>
   );

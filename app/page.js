@@ -9,7 +9,7 @@ import { products } from "@/lib/products";
 
 export default function HomePage() {
   return (
-    <DarkZone images={[IMAGES.canopyBright, IMAGES.cultivationTrim]}>
+    <DarkZone images={[IMAGES.canopyBright]}>
       <TranslucentMark />
 
       <section className="relative mx-auto w-full max-w-6xl px-6 pt-12">
