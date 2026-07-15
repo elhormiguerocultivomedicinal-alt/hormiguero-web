@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import ArrowIcon from "@/components/ArrowIcon";
 import DarkZone from "@/components/DarkZone";
@@ -9,7 +8,7 @@ import { products } from "@/lib/products";
 
 export default function HomePage() {
   return (
-    <DarkZone image={IMAGES.canopyBright}>
+    <DarkZone image={IMAGES.leafCloseupDark}>
       <TranslucentMark />
 
       <section className="relative mx-auto w-full max-w-6xl px-6 pt-16 sm:pt-20">
@@ -39,15 +38,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-6xl px-6 py-24 grid gap-12 md:grid-cols-2 md:items-center">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl p-1.5 ring-1 ring-papaya/10">
+      <section className="relative mx-auto max-w-6xl px-6 pt-16 pb-8 grid gap-12 md:grid-cols-2 md:items-center">
+        <div className="relative aspect-[3/4] overflow-hidden rounded-2xl p-1.5 ring-1 ring-papaya/10">
           <div className="relative h-full w-full overflow-hidden rounded-xl">
-            <Image
-              src={IMAGES.cultivationTrim.src}
-              alt={IMAGES.cultivationTrim.alt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="photo-tone object-cover"
+            <video
+              src="/videos/manicurado.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="photo-tone h-full w-full object-cover"
             />
           </div>
         </div>

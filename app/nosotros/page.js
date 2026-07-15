@@ -1,3 +1,4 @@
+import Image from "next/image";
 import DarkZone from "@/components/DarkZone";
 import Reveal from "@/components/Reveal";
 import TranslucentMark from "@/components/TranslucentMark";
@@ -66,7 +67,21 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-3xl px-6 pt-4 pb-20">
+      <section className="relative mx-auto max-w-3xl px-6 py-8">
+        <div className="relative mx-auto aspect-[3/4] max-w-sm overflow-hidden rounded-2xl p-1.5 ring-1 ring-papaya/10">
+          <div className="relative h-full w-full overflow-hidden rounded-xl">
+            <Image
+              src={IMAGES.growroom1.src}
+              alt={IMAGES.growroom1.alt}
+              fill
+              sizes="(min-width: 768px) 400px, 90vw"
+              className="photo-tone object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="relative mx-auto max-w-3xl px-6 py-4">
         <div className="glass-panel rounded-2xl px-8 py-10 ring-1 ring-papaya/10">
           <h2 className="font-display text-3xl text-papaya sm:text-4xl">
             ¿Qué es REPROCANN?
@@ -85,6 +100,20 @@ export default function NosotrosPage() {
             oficial es el sitio de REPROCANN del Ministerio de Salud de la
             Nación.
           </p>
+        </div>
+      </section>
+
+      <section className="relative mx-auto max-w-3xl px-6 py-8">
+        <div className="relative mx-auto aspect-[3/4] max-w-sm overflow-hidden rounded-2xl p-1.5 ring-1 ring-papaya/10">
+          <div className="relative h-full w-full overflow-hidden rounded-xl">
+            <Image
+              src={IMAGES.brandWall.src}
+              alt={IMAGES.brandWall.alt}
+              fill
+              sizes="(min-width: 768px) 400px, 90vw"
+              className="photo-tone object-cover"
+            />
+          </div>
         </div>
       </section>
     </DarkZone>

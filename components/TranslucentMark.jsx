@@ -9,7 +9,7 @@ export default function TranslucentMark({ className = "", size = "6rem" }) {
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute inset-0 opacity-[0.09] ${className}`}
+      className={`pointer-events-none absolute inset-0 opacity-[0.18] ${className}`}
       style={{
         backgroundColor: "var(--color-papaya)",
         WebkitMaskImage: `url(${IMAGES.logoIcon.src})`,
