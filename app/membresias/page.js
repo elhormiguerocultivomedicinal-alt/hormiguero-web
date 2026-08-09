@@ -28,9 +28,13 @@ export default function MembresiasPage() {
         </p>
         <div className="mt-6 flex flex-wrap gap-2">
           {AVAILABLE_GENETICS.map((genetic) => (
-            <span key={genetic} className="tag-stamp bg-forest/70 backdrop-blur-sm">
-              {genetic}
-            </span>
+            <Link
+              key={genetic.slug}
+              href={`/productos/${genetic.slug}`}
+              className="tag-stamp bg-forest/70 backdrop-blur-sm transition-colors hover:border-papaya hover:text-papaya"
+            >
+              {genetic.name}
+            </Link>
           ))}
         </div>
       </section>

@@ -28,11 +28,20 @@ import Image from "next/image";
  * real one (no gap) and, being a fixed value, never changes size
  * mid-scroll (no zoom) — any part of it below the current shorter
  * viewport is simply clipped, not rescaled.
+ *
+ * The extra `+160px` on top of `lvh` is a buffer against iOS/Android
+ * elastic overscroll: bouncing past the top/bottom of the page at the
+ * end of a scroll gesture briefly exposes area outside the `fixed`
+ * element's box, which without this margin shows raw `bg-forest`
+ * instead of photo. 160px comfortably covers a normal-strength bounce.
  */
 export default function PhotoZone({ image, children }) {
   return (
     <>
-      <div aria-hidden className="fixed inset-x-0 top-0 h-lvh -z-10 overflow-hidden bg-forest">
+      <div
+        aria-hidden
+        className="fixed inset-x-0 -top-[80px] h-[calc(100lvh+160px)] overflow-hidden bg-forest"
+      >
         <Image
           src={image.src}
           alt=""
