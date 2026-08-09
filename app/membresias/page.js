@@ -2,6 +2,7 @@ import Link from "next/link";
 import ArrowIcon from "@/components/ArrowIcon";
 import DarkZone from "@/components/DarkZone";
 import MembershipCard from "@/components/MembershipCard";
+import Reveal from "@/components/Reveal";
 import TranslucentMark from "@/components/TranslucentMark";
 import { IMAGES } from "@/lib/images";
 import { AVAILABLE_GENETICS, MEMBERSHIP_TIERS } from "@/lib/memberships";
@@ -85,8 +86,10 @@ export default function MembresiasPage() {
           Elegí tu plan
         </h2>
         <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
-          {MEMBERSHIP_TIERS.map((tier) => (
-            <MembershipCard key={tier.id} tier={tier} />
+          {MEMBERSHIP_TIERS.map((tier, i) => (
+            <Reveal key={tier.id} delay={i * 0.06}>
+              <MembershipCard tier={tier} />
+            </Reveal>
           ))}
         </div>
       </section>
