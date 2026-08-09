@@ -15,18 +15,24 @@ import Image from "next/image";
  * cover one viewport, so any normal photo has resolution to spare, and
  * it never needs blur to hide the shortfall.
  *
- * Height is pinned with `h-svh` (small viewport height), not
- * `inset-0`/`h-full`: mobile Safari/Chrome resize the *visual*
- * viewport as the address bar hides on scroll, and a fixed element
- * sized off that would grow taller mid-scroll — object-cover then
- * rescales to cover the new box, which reads as the photo "zooming"
- * on scroll and snapping back on scroll-up. `svh` is pinned to the
- * smallest (chrome-visible) viewport size, so it never resizes.
+ * Height is pinned with `h-lvh` (large viewport height), not
+ * `inset-0`/`h-full`/`h-svh`: mobile Safari/Chrome resize the *visual*
+ * viewport as the address bar hides on scroll. Sizing off the current
+ * viewport (`dvh`, or `inset-0` on a fixed element) would make the box
+ * grow/shrink live as that happens — object-cover then rescales to
+ * cover the new box, reading as the photo "zooming" on scroll. Sizing
+ * off the *smallest* viewport (`svh`) avoids the zoom but leaves a gap
+ * of bare body background below the photo once the address bar hides
+ * and the real viewport grows past it. `lvh` is pinned to the
+ * *largest* possible viewport, so the box is never shorter than the
+ * real one (no gap) and, being a fixed value, never changes size
+ * mid-scroll (no zoom) — any part of it below the current shorter
+ * viewport is simply clipped, not rescaled.
  */
 export default function PhotoZone({ image, children }) {
   return (
     <>
-      <div aria-hidden className="fixed inset-x-0 top-0 h-svh -z-10 overflow-hidden bg-forest">
+      <div aria-hidden className="fixed inset-x-0 top-0 h-lvh -z-10 overflow-hidden bg-forest">
         <Image
           src={image.src}
           alt=""

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ArrowIcon from "@/components/ArrowIcon";
 import DarkZone from "@/components/DarkZone";
 import MembershipCard from "@/components/MembershipCard";
@@ -21,13 +22,13 @@ export default function MembresiasPage() {
         <h1 className="text-shadow-strong font-display text-4xl text-papaya sm:text-5xl">
           Membresías
         </h1>
-        <p className="text-shadow-strong mt-6 max-w-xl text-lg leading-relaxed text-papaya/90 font-body">
+        <p className="glass-panel mt-6 max-w-xl rounded-xl px-4 py-3 text-lg leading-relaxed text-papaya/90 font-body">
           Elegí tu genética. En las membresías de +5g podés combinar
           variedades — siempre se entrega en frascos de 5g.
         </p>
         <div className="mt-6 flex flex-wrap gap-2">
           {AVAILABLE_GENETICS.map((genetic) => (
-            <span key={genetic} className="tag-stamp">
+            <span key={genetic} className="tag-stamp bg-forest/70 backdrop-blur-sm">
               {genetic}
             </span>
           ))}
@@ -63,17 +64,15 @@ export default function MembresiasPage() {
             Es la nota que hay que firmar para inscribirte como socio
             adherente.
           </p>
-          <a
-            href="/solicitud-membresia.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/membresias/solicitud"
             className="group mt-6 inline-flex items-center gap-3 rounded-full bg-olive py-1 pl-6 pr-1 font-heading text-sm uppercase tracking-wide text-forest transition-opacity hover:opacity-90"
           >
-            Descargar PDF
+            Ver PDF
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-forest text-olive transition-transform group-hover:translate-x-0.5">
               <ArrowIcon className="h-4 w-4" />
             </span>
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -113,17 +112,15 @@ export default function MembresiasPage() {
           </ol>
 
           <div className="mt-8 flex flex-wrap items-center gap-5 font-heading text-sm uppercase tracking-wide">
-            <a
-              href="/solicitud-membresia.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/membresias/solicitud"
               className="group inline-flex items-center gap-3 rounded-full bg-olive py-1 pl-6 pr-1 text-forest transition-opacity hover:opacity-90"
             >
-              Descargar PDF
+              Ver PDF
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-forest text-olive transition-transform group-hover:translate-x-0.5">
                 <ArrowIcon className="h-4 w-4" />
               </span>
-            </a>
+            </Link>
             <a
               href={CONTACT.whatsapp}
               target="_blank"

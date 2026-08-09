@@ -11,12 +11,14 @@ export default function MembershipCard({ tier }) {
       href={buildWhatsappHref(tier)}
       target="_blank"
       rel="noopener noreferrer"
-      className="glass-panel group relative block rounded-2xl border border-papaya/10 p-4 transition-all duration-300 hover:-translate-y-1 hover:rotate-[-0.5deg] hover:border-olive/60 hover:shadow-[0_16px_28px_rgba(0,0,0,0.35)] sm:p-6"
+      className="glass-panel group block rounded-2xl border border-papaya/10 p-4 transition-all duration-300 hover:-translate-y-1 hover:rotate-[-0.5deg] hover:border-olive/60 hover:shadow-[0_16px_28px_rgba(0,0,0,0.35)] sm:p-6"
     >
       {tier.featured && (
-        <span className="tag-stamp absolute top-4 right-4 sm:top-6 sm:right-6">
-          Mejor precio
-        </span>
+        <div className="mb-3 flex justify-center">
+          <span className="inline-flex items-center rounded-[0.3rem] border border-olive px-1.5 py-0.5 font-heading text-[9px] font-semibold uppercase tracking-wide text-olive">
+            Mejor precio
+          </span>
+        </div>
       )}
 
       <div className="flex h-8 w-8 items-center justify-center rounded-full bg-olive font-display text-sm text-forest">
