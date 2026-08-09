@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion } from "motion/react";
 import { NAV_LINKS } from "@/lib/site-config";
 import BrandMark from "./BrandMark";
 
@@ -38,20 +39,28 @@ export default function Header() {
         </button>
       </div>
 
-      {open && (
-        <nav className="md:hidden flex flex-col gap-1 px-6 pb-4 font-heading text-sm uppercase tracking-wide">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="py-2 text-papaya/90 hover:text-olive transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.nav
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="md:hidden flex flex-col gap-1 px-6 pb-4 font-heading text-sm uppercase tracking-wide"
+          >
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="py-2 text-papaya/90 hover:text-olive transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

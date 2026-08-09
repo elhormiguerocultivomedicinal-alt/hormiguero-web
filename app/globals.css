@@ -19,6 +19,10 @@
   --font-body: var(--font-body);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-forest);
   color: var(--color-papaya);
